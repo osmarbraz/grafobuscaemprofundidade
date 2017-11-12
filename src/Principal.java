@@ -38,10 +38,9 @@ public class Principal {
      * Troca um número que representa a posição pela vértice do grafo.
      *
      * @param i Posição da letra
-     * @return Uma String com a letra da posição
+     * @return Uma String com a letra da posição i
      */
-    public static String trocar(int i) {
-        //String letras = "stuvwxyz";
+    public static String trocar(int i) {        
         String letras = "szyxwtvu";
         return letras.charAt(i) + "";
     }
@@ -52,8 +51,7 @@ public class Principal {
      * @param v Letra a ser troca pela posição
      * @return Um inteiro com a posição da letra no grafo
      */
-    public static int destrocar(char v) {
-        //String letras = "stuvwxyz";
+    public static int destrocar(char v) {        
         String letras = "szyxwtvu";
         int pos = -1;
         for (int i = 0; i < letras.length(); i++) {
