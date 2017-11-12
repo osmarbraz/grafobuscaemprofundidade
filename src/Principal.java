@@ -6,6 +6,8 @@
  * Prof Alexandre Gonçalves da Silva 
  *
  * Baseado nos slides 95 da aula do dia 06/10/2017 
+ * Página 440 Cormen 3a Ed
+ *
  * Realiza a Busca em Profundidade ou (Depht-first Search).
  */
 
@@ -22,9 +24,13 @@ public class Principal {
     final static int CINZA = 1; //Vértice visitado mas não finalizado
     final static int PRETO = 2; //Vértice visitado e finalizado
 
+    //Vetor da situação vértice, armazena uma das cores
     static int cor[];
+    //d[x] armazena o instante de descoberta de x.
     static int d[];
+    //f[x] armazena o instante de finalização de x.
     static int f[];
+    //Vertor dos pais de um vértice
     static int pi[];
     static int tempo;
 
@@ -118,7 +124,7 @@ public class Principal {
             if (cor[s] == BRANCO) {
                 System.out.println("Visitando:" + trocar(s));
                 cor[s] = CINZA;
-                tempo = tempo + 1;
+                tempo = tempo + 1; //Vértice branco s acabou de ser descoberto
                 d[s] = tempo;
                 System.out.println("Empilhando:" + trocar(s));
                 q.push(s);
@@ -126,7 +132,7 @@ public class Principal {
                 while (q.isEmpty() == false) {
                     //Desempilha o primeiro vértice
                     int u = (int) q.peek();
-
+                    // Exporar as arestas (u,v)
                     for (int v = 0; v < n; v++) {
                         //Somente com os adjancentes ao vértice u
                         if (G[u][v] != 0) {
@@ -135,7 +141,7 @@ public class Principal {
                                 pi[v] = u;
                                 System.out.println("Visitando:" + trocar(v));
                                 cor[v] = CINZA;
-                                tempo = tempo + 1;
+                                tempo = tempo + 1; //Vértice branco v acabou de ser descoberto
                                 d[v] = tempo;
                                 System.out.println("Empilhando:" + trocar(v));
                                 q.push(v);
@@ -145,7 +151,7 @@ public class Principal {
                     }
                     System.out.println("Desempilhando:" + trocar(u));
                     q.pop();
-                    //Vértice foi visitado e finalizado
+                    //Vértice u foi visitado e finalizado
                     cor[u] = PRETO;
                     tempo = tempo + 1;
                     f[u] = tempo;
@@ -159,6 +165,8 @@ public class Principal {
      *
      * Consumo de tempo Adj[u] vezes
      *
+     * Método DFS-Visit(G,u)
+     * 
      * @param G Matriz de incidência do grafo
      * @param u Vértice raiz da árvore de busca
      */
@@ -168,9 +176,10 @@ public class Principal {
 
         System.out.println("Visitando:" + trocar(u));
         cor[u] = CINZA;
-        tempo = tempo + 1;
+        tempo = tempo + 1; //Vértice branco u acabou de ser descoberto
         d[u] = tempo;
         System.out.println("Empilhando:" + trocar(u));
+        // Exporar as arestas (u,v)
         for (int v = 0; v < n; v++) {
             //Somente com os adjancentes ao vértice u
             if (G[u][v] != 0) {
@@ -183,7 +192,7 @@ public class Principal {
             }
         }
         System.out.println("Desempilhando:" + trocar(u));
-        //Vértice foi visitado e finalizado
+        //Vértice u foi visitado e finalizado
         cor[u] = PRETO;
         tempo = tempo + 1;
         f[u] = tempo;
@@ -191,6 +200,7 @@ public class Principal {
 
     /**
      * Busca em Profundidade (Breadth-first Search) recursivo. 
+     * 
      * Recebe um grafo G e devolve 
      * (i) os instantes d[v] e f[v] para cada v 
      * (ii) uma Floresta de Busca em Profundiade
@@ -198,6 +208,7 @@ public class Principal {
      * Consumo de tempo é O(V)+V chamadas 
      * Complexidade de tempo é O(V+E)
      *
+     * Método DFS(G)
      * @param G Grafo na forma de uma matriz de adjacência
      */
     public static void buscaEmProfundidadeRecursivo(int[][] G) {
