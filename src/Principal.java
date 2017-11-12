@@ -79,7 +79,7 @@ public class Principal {
     }
 
     /**
-     * Busca em Profundidade (Breadth-first Search) Interativo. 
+     * Busca em Profundidade (Breadth-first Search) Iterativo. 
      * Recebe um grafo G e devolve 
      * (i) os instantes d[v] e f[v] para cada v 
      * (ii) uma Floresta de Busca em Profundiade
@@ -89,7 +89,7 @@ public class Principal {
      *
      * @param G Grafo na forma de uma matriz de adjacência
      */
-    public static void buscaEmProfundidadeInterativo(int[][] G) {
+    public static void buscaEmProfundidadeIterativo(int[][] G) {
         //Quantidade vértices do grafo
         int n = G.length;
 
@@ -248,7 +248,7 @@ public class Principal {
 
         //Monta as árvores de busca
         buscaEmProfundidadeRecursivo(G);
-        //buscaEmProfundidadeInterativo(G);
+        //buscaEmProfundidadeIterativo(G);
 
         //Mostra o caminho de s até t
         // inicio s=0
