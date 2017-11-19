@@ -69,14 +69,14 @@ public class Principal {
      * @param s Origem no grafo
      * @param v Destino no grafo
      */
-    public static void printPath(int[][] G, int s, int v) {
+    public static void mostrarCaminho(int[][] G, int s, int v) {
         if (v == s) {
             System.out.println("Cheguei em:" + trocar(s));
         } else {
             if (pi[v] == -1) {
                 System.out.println("Não existe caminho de " + trocar(s) + " a " + trocar(v));
             } else {
-                printPath(G, s, pi[v]);
+                mostrarCaminho(G, s, pi[v]);
                 System.out.println("Visitando:" + trocar(v));
             }
         }
@@ -266,14 +266,14 @@ public class Principal {
         int destino = destrocar('t');
         System.out.println();
         System.out.println("Mostrando o caminho de " + trocar(inicio) + " até " + trocar(destino));
-        printPath(G, inicio, destino);
+        mostrarCaminho(G, inicio, destino);
 
         //Mostra o caminho de s até x
         // destino v = 3
         destino = destrocar('x');
         System.out.println();
         System.out.println("Mostrando o caminho de " + trocar(inicio) + " até " + trocar(destino));
-        printPath(G, inicio, destino);
+        mostrarCaminho(G, inicio, destino);
 
         System.out.println();
         System.out.println("Ordem de execução d[x]/f[x]");
