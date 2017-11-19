@@ -8,7 +8,7 @@
  * Baseado nos slides 95 da aula do dia 06/10/2017 
  * Página 440 Cormen 3a Ed
  *
- * Realiza a Busca em Profundidade ou (Depht-first Search).
+ * Realiza a Busca em Profundidade ou Depht-first Search(DFS).
  */
 
 /**
@@ -253,7 +253,7 @@ public class Principal {
                 {1, 0, 0, 0, 1, 0, 0, 0},
                 {0, 0, 0, 0, 0, 1, 1, 0}};
 
-        System.out.println("Busca em Profundidade");
+        System.out.println(">>> Realiza a Busca em Profundidade ou Depht-first Search(DFS) <<<");
 
         //Monta as árvores de busca
         buscaEmProfundidadeRecursivo(G);
