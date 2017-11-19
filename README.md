@@ -6,6 +6,6 @@ Disciplinas: Projeto e Análise de Algoritmos<br>
 Prof Alexandre Gonçalves da Silva <br>
 <br>
 Baseado nos slides 95 da aula do dia 06/10/2017 <br>
-Página 440 Cormen 3a Ed<br>
+Página 440 Thomas H. Cormen 3a Ed<br>
 <br>
 Realiza a Busca em Profundidade ou (Depht-first Search)<br>

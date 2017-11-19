@@ -6,7 +6,7 @@
  * Prof Alexandre Gonçalves da Silva 
  *
  * Baseado nos slides 95 da aula do dia 06/10/2017 
- * Página 440 Cormen 3a Ed
+ * Página 440 Thomas H. Cormen 3a Ed
  *
  * Realiza a Busca em Profundidade ou Depht-first Search(DFS).
  */
