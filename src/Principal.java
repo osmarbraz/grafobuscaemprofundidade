@@ -41,8 +41,12 @@ public class Principal {
      * @return Uma String com a letra da posição i
      */
     public static String trocar(int i) {        
-        String letras = "szyxwtvu";
-        return letras.charAt(i) + "";
+        String letras = "szyxwtvu";        
+        if ((i >=0) && (i<=letras.length())) {
+            return letras.charAt(i) + "";
+        } else {
+            return "-";
+        }        
     }
 
     /**
