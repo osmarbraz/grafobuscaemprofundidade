@@ -8,4 +8,13 @@ Prof Alexandre Gonçalves da Silva <br>
 Baseado nos slides 95 da aula do dia 06/10/2017 <br>
 Página 440 Thomas H. Cormen 3a Ed<br>
 <br>
-Realiza a Busca em Profundidade ou (Depht-first Search)<br>
+Busca em Profundidade ou (Depht-First Search)<br>
+Aplicações:<br>
+- Deteccão de ciclos<br>
+- Deterinação de pontes e articulações<br>
+- Caminho/ciclo Euleriano<br>
+- Decomposição em componentes fortemente conexas<br>
+- Teste de conectividade<br>
+- Grafo bipartido<br>
+ Etc.
+
