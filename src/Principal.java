@@ -69,7 +69,7 @@ public class Principal {
     /**
      * Mostra o caminho de s até v no grafo G
      *
-     * @param G Matriz de incidência do grafo
+     * @param G Matriz de adjacência do grafo
      * @param s Origem no grafo
      * @param v Destino no grafo
      */
@@ -163,13 +163,13 @@ public class Principal {
     }
 
     /**
-     * Constrói recursivamente uma Árvore de Busca em profundidade. com raiz u.
+     * Constrói recursivamente uma Árvore de Busca em profundidade com raiz u.
      *
      * Consumo de tempo Adj[u] vezes
      *
      * Método DFS-Visit(G,u)
      * 
-     * @param G Matriz de incidência do grafo
+     * @param G Matriz de adjacência do grafo
      * @param u Vértice raiz da árvore de busca
      */
     public static void buscaEmProfundidadeVisita(int[][] G, int u) {
@@ -244,18 +244,18 @@ public class Principal {
 
     public static void main(String args[]) {
 
-        //Matriz de incidência para um grafo direcionado     
+        //Matriz de adjacência para um grafo direcionado     
         //Grafo do slide 71
         int G[][] = 
                 //s  z  y  x  w  t  v  u  
-                {{0, 1, 0, 0, 1, 0, 0, 0},
-                {0, 0, 1, 0, 1, 0, 0, 0},
-                {0, 0, 0, 1, 0, 0, 0, 0},
-                {0, 1, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 1, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 1, 1},
-                {1, 0, 0, 0, 1, 0, 0, 0},
-                {0, 0, 0, 0, 0, 1, 1, 0}};
+               {{0, 1, 0, 0, 1, 0, 0, 0}, //s
+                {0, 0, 1, 0, 1, 0, 0, 0}, //z
+                {0, 0, 0, 1, 0, 0, 0, 0}, //y
+                {0, 1, 0, 0, 0, 0, 0, 0}, //x
+                {0, 0, 0, 1, 0, 0, 0, 0}, //w
+                {0, 0, 0, 0, 0, 0, 1, 1}, //t
+                {1, 0, 0, 0, 1, 0, 0, 0}, //v
+                {0, 0, 0, 0, 0, 1, 1, 0}};//u
 
         System.out.println(">>> Realiza a Busca em Profundidade ou Depht-first Search(DFS) <<<");
 
