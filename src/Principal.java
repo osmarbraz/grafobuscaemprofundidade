@@ -264,7 +264,7 @@ public class Principal {
         //buscaEmProfundidadeIterativo(G);
 
         //Mostra o caminho de s até t
-        // inicio s=0
+        // inicio s = 0
         int inicio = destrocar('s');
         // destino t = 5
         int destino = destrocar('t');
@@ -273,6 +273,8 @@ public class Principal {
         mostrarCaminho(G, inicio, destino);
 
         //Mostra o caminho de s até x
+         // inicio s = 0
+         inicio = destrocar('s');
         // destino v = 3
         destino = destrocar('x');
         System.out.println();
