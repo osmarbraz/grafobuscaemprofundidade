@@ -41,7 +41,7 @@ public class Principal {
      * @return Uma String com a letra da posição i
      */
     public static String trocar(int i) {        
-        String letras = "szyxwtvu";        
+        String letras = "stuvwxyz";        
         if ((i >=0) && (i<=letras.length())) {
             return letras.charAt(i) + "";
         } else {
@@ -56,7 +56,7 @@ public class Principal {
      * @return Um inteiro com a posição da letra no grafo
      */
     public static int destrocar(char v) {        
-        String letras = "szyxwtvu";
+        String letras = "stuvwxyz";
         int pos = -1;
         for (int i = 0; i < letras.length(); i++) {
             if (letras.charAt(i) == v) {
@@ -90,7 +90,7 @@ public class Principal {
      * Busca em Profundidade (Breadth-first Search) Iterativo. 
      * Recebe um grafo G e devolve 
      * (i) os instantes d[v] e f[v] para cada v 
-     * (ii) uma Floresta de Busca em Profundiade
+     * (ii) uma Floresta de Busca em Profundidade
      *
      * Consumo de tempo é O(V)+V chamadas 
      * Complexidade de tempo é O(V+E)
@@ -134,8 +134,8 @@ public class Principal {
                 while (q.isEmpty() == false) {
                     //Desempilha o primeiro vértice
                     int u = (int) q.peek();
-                    // Exporar as arestas (u,v)
-                    for (int v = 0; v < n; v++) {
+                    // Explorar as arestas (u,v)
+                    for (int v = 0; v < 0; v++) {
                         //Somente com os adjancentes ao vértice u
                         if (G[u][v] != 0) {
                             if (cor[v] == BRANCO) {
@@ -181,7 +181,7 @@ public class Principal {
         tempo = tempo + 1; //Vértice branco u acabou de ser descoberto
         d[u] = tempo;
         System.out.println("Empilhando:" + trocar(u));
-        // Exporar as arestas (u,v)
+        // Explorar as arestas (u,v)
         for (int v = 0; v < n; v++) {
             //Somente com os adjancentes ao vértice u
             if (G[u][v] != 0) {
@@ -246,22 +246,23 @@ public class Principal {
 
         //Matriz de adjacência para um grafo direcionado     
         //Grafo do slide 71
+        //Considere a ordem dos adjacentes pois muda a ordem da busca
         int G[][] = 
-                //s  z  y  x  w  t  v  u  
-               {{0, 1, 0, 0, 1, 0, 0, 0}, //s
-                {0, 0, 1, 0, 1, 0, 0, 0}, //z
-                {0, 0, 0, 1, 0, 0, 0, 0}, //y
-                {0, 1, 0, 0, 0, 0, 0, 0}, //x
-                {0, 0, 0, 1, 0, 0, 0, 0}, //w
-                {0, 0, 0, 0, 0, 0, 1, 1}, //t
+               //s  t  u  v  w  x  y  z  
+               {{0, 0, 0, 0, 1, 0, 0, 1}, //s
+                {0, 0, 1, 1, 0, 0, 0, 0}, //t
+                {0, 1, 0, 1, 0, 0, 0, 0}, //u
                 {1, 0, 0, 0, 1, 0, 0, 0}, //v
-                {0, 0, 0, 0, 0, 1, 1, 0}};//u
+                {0, 0, 0, 0, 0, 1, 0, 0}, //w
+                {0, 0, 0, 0, 0, 0, 0, 1}, //x
+                {0, 0, 0, 0, 0, 1, 0, 0}, //y
+                {0, 0, 0, 0, 1, 0, 1, 0}};//z
 
         System.out.println(">>> Realiza a Busca em Profundidade ou Depht-first Search(DFS) <<<");
 
         //Monta as árvores de busca
         buscaEmProfundidadeRecursivo(G);
-        //buscaEmProfundidadeIterativo(G);
+//        buscaEmProfundidadeIterativo(G);
 
         //Mostra o caminho de s até t
         // inicio s = 0
